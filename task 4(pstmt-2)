@@ -1,0 +1,16 @@
+def check_inventory(products):
+    for product, stock in products.items():
+        if stock < 15:
+            print(f"{product} : Reorder Alert")
+        else:
+            print(f"{product} : Stock OK")
+
+inventory = {
+    "Rice": 20,
+    "Wheat": 10,
+    "Sugar": 5,
+    "Oil": 18,
+    "Salt": 14
+}
+
+check_inventory(inventory)
