@@ -1,0 +1,19 @@
+def find_duplicate_users(user_ids):
+    frequency = {}
+    
+    # Count occurrences
+    for user in user_ids:
+        if user in frequency:
+            frequency[user] += 1
+        else:
+            frequency[user] = 1
+    
+    # Display duplicates only
+    for user, count in frequency.items():
+        if count > 1:
+            print(f"{user} → {count} times")
+
+
+user_ids = ["user1", "user2", "user1", "user3", "user1", "user3"]
+
+find_duplicate_users(user_ids)
