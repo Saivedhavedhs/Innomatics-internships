@@ -1,0 +1,15 @@
+def detect_sales_spike(sales):
+    total = 0
+    
+    # Calculate total sales
+    for value in sales:
+        total += value
+    
+    average = total / len(sales)
+    # Detect days above average
+    for i in range(len(sales)):
+        if sales[i] > average:
+            print(f"Day {i + 1}: {sales[i]}")
+sales = [1200, 1500, 900, 2200, 1400, 3000]
+
+detect_sales_spike(sales)
