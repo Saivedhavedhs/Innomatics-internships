@@ -1,0 +1,22 @@
+def check_password(password):
+    if len(password) < 8:
+        return "Weak Password"
+    
+    has_digit = False
+    has_special = False
+    
+    for char in password:
+        if char.isdigit():
+            has_digit = True
+        if char in "@#$":
+            has_special = True
+    
+    if has_digit and has_special:
+        return "Strong Password"
+    else:
+        return "Weak Password"
+
+
+user_password = input("Enter password: ")
+result = check_password(user_password)
+print(result)
