@@ -1,0 +1,25 @@
+def top_performers(employees):
+    # Find highest score
+    highest_score = max(employees.values())
+    
+    # Find all employees with highest score
+    top_employees = []
+    
+    for name, score in employees.items():
+        if score == highest_score:
+            top_employees.append(name)
+    
+    # Format output
+    print("Top Performers Eligible for Bonus:", 
+          ", ".join(top_employees), 
+          f"(Score: {highest_score})")
+employees = {
+    "navi": 92,
+    "Anita": 88,
+    "nainika": 92,
+    "Sanvitha": 85
+}
+
+top_performers(employees)
+
+
