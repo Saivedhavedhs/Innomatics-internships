@@ -1,0 +1,29 @@
+def validate_recharge(balance, plan):
+    valid_plans = [199, 299, 399, 599]
+    
+    if balance < 50:
+        return "Minimum recharge balance must be ₹50."
+    
+    if plan not in valid_plans:
+        return "Invalid plan selected."
+    
+    if balance < plan:
+        return "Insufficient balance for selected plan."
+    
+    return "Recharge Successful!"
+
+while True:
+    try:
+        balance = int(input("Enter available balance: ₹"))
+        plan = int(input("Enter plan (199, 299, 399, 599): "))
+        
+        result = validate_recharge(balance, plan)
+        print(result)
+        
+        if result == "Recharge Successful!":
+            break
+        else:
+            print("Please try again.\n")
+    
+    except ValueError:
+        print("Invalid input. Enter numbers only.\n")
