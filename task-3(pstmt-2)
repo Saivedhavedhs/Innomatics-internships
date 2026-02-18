@@ -1,0 +1,32 @@
+import string
+
+def keyword_analysis(query):
+    # Convert to lowercase
+    query = query.lower()
+    
+    # Remove punctuation
+    for char in string.punctuation:
+        query = query.replace(char, "")
+    
+    words = query.split()
+    
+    frequency = {}
+    
+    # Count word frequency
+    for word in words:
+        if word in frequency:
+            frequency[word] += 1
+        else:
+            frequency[word] = 1
+    
+    # Filter words appearing more than once
+    result = {}
+    for word, count in frequency.items():
+        if count > 1:
+            result[word] = count
+    
+    print(result)
+
+
+query = "Buy mobile phone buy phone online"
+keyword_analysis(query)
