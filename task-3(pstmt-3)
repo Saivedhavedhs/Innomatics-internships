@@ -1,0 +1,10 @@
+def validate_sensor_data(sensor_readings):
+    valid_readings = []
+    
+    for index in range(len(sensor_readings)):
+        if sensor_readings[index] % 2 == 0:
+            valid_readings.append((index, sensor_readings[index]))
+    print("Valid Sensor Readings (Hour, Value):")
+    print(valid_readings)
+sensor_readings = [3, 4, 7, 8, 10, 12, 5]
+validate_sensor_data(sensor_readings)
