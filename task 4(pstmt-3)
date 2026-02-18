@@ -1,0 +1,19 @@
+def student_result(marks):
+    total = 0
+    
+    for mark in marks:
+        total += mark
+    
+    average = total / len(marks)
+    print("Average:", average)
+    
+    if average >= 50:
+        print("Pass")
+        return "Pass"
+    else:
+        print("Fail")
+        return "Fail"
+
+marks_list = [30, 55, 40, 70, 65]
+
+result = student_result(marks_list)
